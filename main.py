@@ -19,7 +19,6 @@ ALLOWED_EXTENSIONS = set(['mp3'])
 
 # Use CUDA, if available
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-print(DEVICE)
 
 # Load the Whisper model and other functions here
 model = whisper.load_model("base").to(DEVICE)
@@ -59,32 +58,6 @@ def download_multiple_files(files_to_send):
 def transcribe_file(model, file, plain, srt, vtt, tsv):
     """
     Runs Whisper on an audio file
-
-    Parameters
-    ----------
-    model: Whisper
-        The Whisper model instance.
-
-    file: str
-        The file path of the file to be transcribed.
-
-    plain: bool
-        Whether to save the transcription as a text file or not.
-
-    srt: bool
-        Whether to save the transcription as an SRT file or not.
-
-    vtt: bool
-        Whether to save the transcription as a VTT file or not.
-
-    tsv: bool
-        Whether to save the transcription as a TSV file or not.
-
-    download: bool
-        Whether to download the transcribed file(s) or not.
-
-    Returns
-    -------
     A dictionary containing the resulting text ("text") and segment-level details ("segments"), and
     the spoken language ("language"), which is detected when `decode_options["language"]` is None.
     """
@@ -178,4 +151,6 @@ def transcribe():
     return result
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    from gunicorn import Gunicorn
+    Gunicorn(app).run()
+
