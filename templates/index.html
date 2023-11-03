@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Transcription</title>
+</head>
+<body>
+    <h1>Audio Transcription</h1>
+    <form action="/transcribe" method="post" enctype="multipart/form-data">
+        <label for="input_format">Input Format:</label>
+        <select name="input_format" id="input_format">
+            <option value="youtube">YouTube</option>
+            <option value="local">Local File</option>
+        </select><br><br>
+
+        <label for="url">YouTube URL:</label>
+        <input type="text" name="url" id="url"><br><br>
+        <label for="file">MP3 File:</label>
+        <input type="file" name="file" id="file" accept=".mp3">
+        <br>
+        <label for="plain">Save as TXT:</label>
+        <input type="checkbox" name="plain" id="plain" value="true"><br><br>
+
+        <label for="srt">Save as SRT:</label>
+        <input type="checkbox" name="srt" id="srt" value="true"><br><br>
+
+        <label for="vtt">Save as VTT:</label>
+        <input type="checkbox" name="vtt" id="vtt" value="true"><br><br>
+
+        <label for="tsv">Save as TSV:</label>
+        <input type="checkbox" name="tsv" id="tsv" value="true"><br><br>
+
+
+
+        <input type="submit" value="Transcribe">
+    </form>
+</body>
+</html>

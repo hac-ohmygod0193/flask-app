@@ -12,7 +12,7 @@ from zipfile import ZipFile
 app = Flask(__name__)
 
 # Define the path for uploading and storing files
-UPLOAD_FOLDER = '/mnt/c/Users/ohmygod/OneDrive - 國立陽明交通大學/side-project/Note-taking-gpt/flask/temp'
+UPLOAD_FOLDER = './temp'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Max file size (16MB)
 ALLOWED_EXTENSIONS = set(['mp3'])
