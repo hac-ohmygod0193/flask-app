@@ -20,7 +20,7 @@ cookie = "sessionKey=sk-ant-sid01-td3NkyWZwCBraSImJy9EtpixAbUalRWZrYIlgFN6BmDNku
 claude_api = Client(cookie)
 
 # Define the path for uploading and storing files
-UPLOAD_FOLDER = '/mnt/c/Users/ohmygod/OneDrive - 國立陽明交通大學/side-project/Note-taking-gpt/flask/temp'
+UPLOAD_FOLDER = './'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Max file size (16MB)
 ALLOWED_EXTENSIONS = set(['pdf','txt', 'png', 'jpg', 'jpeg', 'gif','mp3','mp4'])
@@ -37,7 +37,7 @@ def to_snake_case(name):
 
 def download_youtube_audio(url,  file_name = None):
     "Download the audio from a YouTube video"
-    target_path = "./temp"
+    target_path = "./"
 
     yt = YouTube(url)
 
